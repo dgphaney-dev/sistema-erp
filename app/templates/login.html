@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt_BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=devince-width, initial-scale=1.0">
+    <title> Login - ERP Construção</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/global.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/login.css') }}">
+</head>
+
+<body class="login-body">
+    <div class="login-container">
+        <div class="login-card">
+            <div class="login-header">
+                <h2>ERP Construção</h2>
+                <p>Acesse sua conta para continuar</p>
+            </div>
+
+            <form action="/login" method="POST" class="login-form">
+                <div class="form-group">
+                    <label for="email">E-mail ou Usuário</label>
+                    <input 
+                    type="text"
+                    id="email" 
+                    name="email" 
+                    placeholder="Digite seu e-mail ou usuário" 
+                    required
+                    autofocus>
+                </div>
+
+                <div class="form-group">
+                    <label for="senha">Senha</label>
+                    <input 
+                    type="password" 
+                    id="senha" 
+                    name="senha" 
+                    placeholder="Digite sua senha" 
+                    required>
+                </div>
+                <button type="submit" class="btn-login">Entar no Sistema</button>
+            </form>
+        </div>
+    </div>
+
+</body>
+
+</html>
