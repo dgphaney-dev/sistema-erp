@@ -1,48 +1,41 @@
 <!DOCTYPE html>
-<html lang="pt_BR">
+<html lang="pt-BR">
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=devince-width, initial-scale=1.0">
-    <title> Login - ERP Construção</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/global.css') }}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ERP Construção | Login</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/login.css') }}">
 </head>
 
-<body class="login-body">
-    <div class="login-container">
-        <div class="login-card">
-            <div class="login-header">
-                <h2>ERP Construção</h2>
-                <p>Acesse sua conta para continuar</p>
+<body>
+    <div class="login-wrapper">
+        <div class="brand-side">
+            <div class="brand-content">
+                <h1>ERP Construção</h1>
+                <p>Plataforma integrada para engenharia e administração de canteiros de obras.</p>
             </div>
-
-            <form action="/login" method="POST" class="login-form">
-                <div class="form-group">
-                    <label for="email">E-mail ou Usuário</label>
-                    <input 
-                    type="text"
-                    id="email" 
-                    name="email" 
-                    placeholder="Digite seu e-mail ou usuário" 
-                    required
-                    autofocus>
+        </div>
+        <div class="form-side">
+            <div class="login-container">
+                <h2>ERP de Construção</h2>
+                <form action="/login" method="POST">
+                    <div class="field">
+                        <label>E-mail</label>
+                        <input type="email" name="email" required>
+                    </div>
+                    <div class="field">
+                        <label>Senha</label>
+                        <input type="password" name="senha" required>
+                    </div>
+                    <button type="submit">ACESSAR</button>
+                </form>
+                <div class="footer-links">
+                    <a href="#">Esqueci minha senha</a>
                 </div>
-
-                <div class="form-group">
-                    <label for="senha">Senha</label>
-                    <input 
-                    type="password" 
-                    id="senha" 
-                    name="senha" 
-                    placeholder="Digite sua senha" 
-                    required>
-                </div>
-                <button type="submit" class="btn-login">Entar no Sistema</button>
-            </form>
+            </div>
         </div>
     </div>
-
 </body>
 
 </html>
