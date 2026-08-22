@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard | ERP Construção</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/dashboard.css') }}">
+</head>
+
+<body>
+    <div class="dashboard-wrapper">
+        <!-- Sidebar de Navegação -->
+        <aside class="sidebar">
+            <div class="sidebar-brand">
+                <h2>ERP Construção</h2>
+            </div>
+
+            <nav class="sidebar-nav">
+                <a href="/dashboard" class="active">
+                    <span class="material-icons">dashboard</span> Visão geral
+                </a>
+                <a href="#">
+                    <span class="material-icons">inventory_2</span> Materiais
+                </a>
+                <a href="#">
+                    <span class="material-icons">storefront</span> Estoque
+                </a>
+                <a href="#">
+                    <span class="material-icons">local_shipping</span> Fornecedores
+                </a>
+            </nav>
+
+            <div class="sidebar-footer">
+                <a href="/" class="logout-link">
+                    <span class="material-icons">logout</span> Sair do Sistema
+                </a>
+            </div>
+        </aside>
+
+        <!-- Área Principal -->
+        <main class="main-content">
+            <!-- Cabeçalho Aprimorado -->
+            <header class="main-header">
+                <div class="header-titles">
+                    <h1>Painel de Controle</h1>
+                    <p>Visão geral e monitoramento do sistema de gestão de obras.</p>
+                </div>
+                <div class="header-badge">
+                    <span class="material-icons">verified_user</span> Sistema Online
+                </div>
+            </header>
+
+            <!-- Grid de Cards com Dados do Banco -->
+            <section class="metrics-grid">
+                <div class="card">
+                    <div class="card-header">
+                        <h3>Total de Materiais</h3>
+                        <span class="material-icons card-icon">inventory_2</span>
+                    </div>
+                    <p class="card-value">{{ produtos }}</p>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <h3>Fornecedores Ativos</h3>
+                        <span class="material-icons card-icon">local_shipping</span>
+                    </div>
+                    <p class="card-value">{{ fornecedores }}</p>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <h3>Status do Estoque</h3>
+                        <span class="material-icons card-icon">storefront</span>
+                    </div>
+                    <p class="card-value status-stable">{{ status_estoque }}</p>
+                </div>
+            </section>
+        </main>
+    </div>
+</body>
+
+</html>
